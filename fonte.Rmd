@@ -1,13 +1,16 @@
 ---
-title: "Plano Mais Brasil"
+title: "Plano Mais Brasil:"
+subtitle: "PEC DDD (desvincular, desindexar e desobrigar)"
 output:
   html_document:
     code_folding: hide
 ---
+***   
 
-## Fonte de recursos: a chave para entender a desvinculação do orçamento federal
+### Fonte de recursos:
+#### A chave para entender a desvinculação do orçamento federal
 
-No dia 05/11/2019, o governo federal anunciou medidas econômicas para equilibrar as contas públicas [https://www.youtube.com/watch?v=v9PENV_E7vM].
+No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas [https://www.youtube.com/watch?v=v9PENV_E7vM].
 
 Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação de recursos?
 
@@ -17,13 +20,16 @@ Vamos utilizar dados abertos para explicar:
 2) a desvinculação de recursos
 3) o conceito de fonte de recursos
 
-Coletei os dados no portal Siga Brasil do Senado Federal [https://www12.senado.leg.br/orcamento/sigabrasil] e depois preparei o código para gerar os gráficos e tabelas.
 
-Para maiores informações sobre fontes de recursos, acessar:
 
-1) Fontes de Recursos : [https://www12.senado.leg.br/orcamento/glossario/fonte-de-recursos] 
+***
 
-2) Orçamento Fácil: vinculação de receitas: [https://www.youtube.com/watch?v=OPdGF5QGXyE]
+#### Para programadores e curiosos
+
+Coletei os dados no portal Siga Brasil do Senado Federal [https://www12.senado.leg.br/orcamento/sigabrasil] e depois preparei o código para gerar os gráficos.
+
+Disponibilizei o código e arquivos no GitHub: https://github.com/andreferraribr/fonte
+
 
 
 ```{r setup, include=FALSE}
@@ -33,28 +39,26 @@ options(digits = 2)
 ```
 
 
-```{r}
+```{r, message=FALSE}
 library(dplyr)
-library(networkD3)
-library(tidyr)
 library(readxl)
 library(ggplot2)
-library(treemap)
 library(stringr)
-library(htmlwidgets)
-library(DT)
 library(plotly)
 library(broman)
 ```
 
-### Preparar os dados
+***   
+
+
+#### Preparar os dados
 
 A partir do Siga Brasil baixamos as planilhas:
 
 1) "nat_rec", com detalhes sobre os valores arrecadados.   
 2) "outflux", com detalhes sobre os pagamentos totais (pagamentos da LOA + pagamentos de restos a pagar).
 
-vídeo sobre LOA e restos a pagar [https://www.youtube.com/watch?v=ZcqgaEjJ7Aw]
+Vídeo sobre LOA e restos a pagar [https://www.youtube.com/watch?v=ZcqgaEjJ7Aw]
 
 ```{r}
 
@@ -82,6 +86,9 @@ outflux <- outflux%>%
   filter(outflux_reais > 0)
 
 ```
+
+***   
+
 
 ### Arrecadação
 
@@ -207,8 +214,11 @@ p <- plot_ly(
 p
 ```
 
+***   
 
-### A Faixa da discórdia
+
+### A Faixa da discórdia   
+
 #### DRU x Orçamento da Seguridade Social
 
 Criamos um filtro para melhorar a compreensão do fluxo da arrecadação.
@@ -219,12 +229,12 @@ Em azul temos a faixa da discórdia: a desvinculação da arrecadação de contr
 
 Parte da arrecadação das contribuições sociais é desvinculada via Desvinculação de Receitas da União (DRU).
 
-Devido à DRU, a seguridade social perde a garantia de ter 120 bilhões gastos exclusivamente em despesas da seguridade social. O governo redireciona os 120 bi para a fonte recursos ordinários e agora o governo pode utilizar esses recursos para pagar qualquer tipo de despesa, inclusive despesas da seguridade social.
+Devido à DRU, a seguridade social perde a garantia de ter R$ 120 bilhões gastos exclusivamente em despesas da seguridade social. O governo redireciona os R$ 120 bi para a fonte recursos ordinários e agora o governo pode utilizar esses recursos para pagar qualquer tipo de despesa, inclusive despesas da seguridade social.
 
 Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recursos.
 
 
-vídeo sobre a DRU [https://www.youtube.com/watch?v=nb9LkOjUZyg]
+Vídeo sobre a DRU [https://www.youtube.com/watch?v=nb9LkOjUZyg]
 
 ```{r, Desvinculação de Recursos da União (R$ Bi)}
 
@@ -338,9 +348,12 @@ p <- plot_ly(
 p
 ```
 
+***   
+
+
 ### Classificação por fonte/destinação de recurso
 
-A seguir, texto extrído de documento pulicado no site do Tesouro Nacional:
+A seguir, texto extraído de documento pulicado no site do Tesouro Nacional:
 
 A classificação orçamentária por fontes/destinações de recursos tem como objetivo identificar
 as fontes de financiamento dos gastos públicos. As fontes/destinações de recursos reúnem
@@ -355,6 +368,8 @@ despesas orçamentárias. Para a despesa orçamentária, identifica a origem dos
 estão sendo utilizados.
 
 [http://www.tesouro.fazenda.gov.br/documents/10180/676688/Item+11+-+Classifica%C3%A7%C3%A3o+por+Fonte-Destina%C3%A7%C3%A3o+de+Recursos.pdf/988a562d-cd16-4b00-ad16-90d8b7f6bb8d]
+
+***   
 
 #### Arrecadação e fonte CIDE
 
@@ -472,13 +487,16 @@ p <- plot_ly(
 p
 ```
 
+***   
+
+
 ### Pagamentos
 
 #### Pagamentos e fonte CIDE 
 
 Até aqui o nosso foco foi o ingresso de recursos, a arrecadação.
 
-Agora, vamos nos concentrar da destinação dos recursos, a despesa.
+Agora, vamos nos concentrar na destinação dos recursos, a despesa.
 
 No caso específico da CIDE, a lei 10.336/2001 estabelece as seguintes destinações para os recursos arrecadados:
 
@@ -488,8 +506,6 @@ II - financiamento de projetos ambientais relacionados com a indústria do petr�
 
 III - financiamento de programas de infra-estrutura de transportes.
 
-Não entramos nos detalhes da destinação dos recursos a ponto de verificar se a lei foi obedecida. De qualquer forma, segue link de planilha com as ações governamentais pagas com recursos da fonte CIDE.
-
 Nosso objetivo é apenas mostrar a destinação da CIDE por elemento da despesa.
 
 O gráfico abaixo aponta a destinação de recursos da CIDE para:
@@ -498,8 +514,11 @@ O gráfico abaixo aponta a destinação de recursos da CIDE para:
 
 2) distribuição constitucional ou legal de receitas   
 
-3) outros serviços de terceiro - pessoa jurídica   
+3) outros serviços de terceiros - pessoa jurídica   
 
+***
+
+Não entramos nos detalhes da destinação dos recursos a ponto de verificar se a lei foi obedecida. De qualquer forma, segue link de planilha com as ações governamentais pagas com recursos da fonte CIDE. [https://github.com/andreferraribr/fonte/blob/master/cide.xlsx?raw=true]
 
 O Manual Técnico do Orçamento traz os conceitos de elemento da despesa: [http://www.planejamento.gov.br/assuntos/orcamento-1/informacoes-orcamentarias/arquivos/MTOs/mto_atual.pdf]
 
@@ -621,14 +640,19 @@ p
 
 ```
 
+***   
+
+
 ### Todos os pagamento de 2018   
 
 #### Detalhamento por esfera, indicador de resultado primário, fonte e elemento da despesa
 
 
-Vamos ampliar o escopo da nossa análise. O gráfico abaixo traz todos os pagamentos efetuados em 2018. A informação é detalhada por, esfera, indicador de resultado primário, fonte e elemente da despesa.Destacamos, em vermelho, os recursos ordinários.   
+Vamos ampliar o escopo da nossa análise. O gráfico abaixo traz todos os pagamentos efetuados em 2018. A informação é detalhada por esfera, indicador de resultado primário, fonte e elemento da despesa.
 
-Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de elementos da despesas.
+Destacamos, em vermelho, os recursos ordinários.   
+
+Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de elementos da despesa.
 
 
 ```{r, Governo Feredal 2018: pagamentos por esfera, indicador de resultado primário, fonte de recurso e elemento da despesa (R$ bi)}
@@ -638,22 +662,11 @@ outflux_s<- outflux%>%
   summarise(value = sum(outflux_reais/1000000000))%>%
   arrange(desc(value ))
 
-
-
-
 # arredondar valor para melhorar visualização da tabela
 
 outflux_s$value<-round(outflux_s$value, 1)
 
-
-
-
-
-
-
-
 names<- c()
-
 
 # loop para extrair nomes dos nodes a partir da df outflux_s
 for(i in 1:ncol(outflux_s)-1)
@@ -663,7 +676,6 @@ for(j in 1:NROW(outflux_s[,i]))
 names <- c(names,outflux_s[j,i]) ;
 }
 }
-
 
 
 # obeter apenas os nomes únicos.
@@ -745,15 +757,18 @@ p
 
 ```
 
+***   
+
+
 ### Fonte e pagamentos de pensão e aposentadoria
 
 O controle por fonte permite visualizar quais fontes o governo utilizou para pagar despesas com pensões e aposentadorias.
 
-Destacamos, em vermelho quatro, pontos interessantes. Em termos nominais, no período de 2005 a 2018, o governo destinou para a seguridade social:
+Destacamos, em vermelho, quatro pontos interessantes. Em termos nominais, no período de 2005 a 2018, o governo destinou para a seguridade social:
 
 1) R$ 539 bi de recursos ordinários
-2) R$ 197 bi de recursos provenientes da remuneração das disponibilidades do Tesouro Nacional
-3) R$ 163 bi de recursos provenientes de Títulos de responsabilidade do Tesouro Nacioanal
+2) R$ 197 bi de recursos provenientes da Remuneração das disponibilidades do Tesouro Nacional
+3) R$ 163 bi de recursos provenientes de Títulos de responsabilidade do Tesouro Nacional
 4) R$ 185 bi de recursos do orçamento fiscal para cobrir despesas com aposentadorias e pensões
 
 
@@ -868,24 +883,27 @@ p
 
 ```
 
+***   
+
+
 ### DRU x Fonte Recursos Ordinários
 
-Vimos anteiormente que parte da arrecadação das contribuições sociais segue o seguinte fluxo:
+Vimos anteriormente que parte da arrecadação das contribuições sociais percorre o seguinte fluxo:
 
 1) parte da arrecadação é desvinculada via DRU,
 2) A DRU irriga a fonte de recursos ordinários,
-3) Os recursos ordinário são direcionados para o orçamento fiscal.
+3) Os recursos ordinários são direcionados para o orçamento fiscal.
 
 Agora vamos apurar o saldo das transferências líquidas entre o orçamento da seguridade social e o orçamento fiscal.
 
-O saldo é positivo quando a seguridade transfere mais recursos do que recebe. Ou seja, a desvinculação via DRU foi maior que o retorno via recuros ordinários. Por exemplo, em 2005 a DRU foi de 32 bi, enquando 8,5 bi retornaram para a seguridade social via recursos ordinários. Logo a seguridade foi superavitária em 24,5 bi e o superávit da seguridade foi utilizado para arcar com despesas fiscais.
+O saldo é positivo quando a seguridade social transfere mais recursos do que recebe. Ou seja, a desvinculação via DRU foi maior que o retorno via recursos ordinários. Por exemplo, em 2005 a DRU foi de  R$ 32,4 bi, enquanto R$ 8,5 bi retornaram para a seguridade social via recursos ordinários. Logo, o orçamento da seguridade social foi superavitário em R$ 23,9 bi.
 
-É importante ressaltar que apuramos apensas os recursos odinários destinados para a seguridade social. Contudo, recursos ordinários da esfera fiscal também podem ser utilizados para pagar despesas típicas da seguridade social, reduzindo assim o superávit da seguridade social.
+É importante ressaltar que apuramos apensas os recursos ordinários destinados para a seguridade social. Contudo, recursos ordinários da esfera fiscal também podem ser utilizados para pagar despesas típicas da seguridade social, reduzindo assim o superávit da seguridade social.
 
-Sob esse prisma, a seguridade fiscal foi superavitária em todo o período, com exceção de 2016 e 2017. Contudo, o déficit de apenas dois anos é praticamente igual a todo o superavít do período.
+Sob esse prisma, a seguridade fiscal foi superavitária em todo o período, com exceção de 2014, 2016 e 2017. Contudo, o déficit de apenas dois anos é praticamente igual a todo o superávitdo período.
 
 
-```{r, saldo DRU x Fonte 100}
+```{r, saldo DRU x Fonte 100, fig.width = 12,  fig.height= 9}
 #Recursos de contribuições sociais carimbados como fonte 100 (recursos ordinários)
 dru<-  nat_rec%>%
   filter(especie_cod == "121", fonte_cod == "100" )
@@ -931,7 +949,7 @@ p <- plot_ly(dru_ord)%>%
   geom_point(color = "white", size =0.5)+
   geom_line(group=1, color = "gray")+
   theme_bw()+
-  ggtitle("DRU x recursos ordinários destinados à seguridade social", "Governo Federal 2005 a 2018 (R$ bi nominais)")+
+  ggtitle("DRU (azul) x recursos ordinários destinados à seguridade social (vermelho)", "Governo Federal 2005 a 2018 (R$ bi nominais)")+
   xlab("")+
   ylab("")+
   theme(
@@ -940,8 +958,8 @@ p <- plot_ly(dru_ord)%>%
   )+
      scale_fill_manual(
     values = c("blue",  "#ff0000"))+
-  geom_text(aes(label = sprintf("%0.1f", round(value, digits = 1))), size= 2.5, color = "white"  ,vjust=-0.25, position = position_dodge(0.9))+
-  theme(axis.text.x = element_text(size = 7, hjust = 1, vjust = 1))
+  geom_text(aes(label = sprintf("%0.1f", round(value, digits = 1))), size= 3.5, color = "white"  ,vjust=-0.25, position = position_dodge(0.1))+
+  theme(axis.text.x = element_text(size = 9, hjust = 0, vjust = 0), legend.position="top")
 
 p
 
@@ -953,16 +971,20 @@ p
 
 ```
 
+***   
+
 
 ### DRU x Fontes fiscais
 
-Para ficar mais completa, devemos incluir outras fontes que irrigam o orçamento da seguridade social.
+Para a nossa análise ficar mais completa, devemos incluir outras fontes que irrigam o orçamento da seguridade social.
 
-Abaixo exibimos o gráfico após a inclusão das fontes REMUNERACAO DAS DISPONIB. DO TESOURO NACIONAL, TITULOS DE RESPONSABILID.DO TESOURO NACIONAL.
+Abaixo exibimos o gráfico após a inclusão de duas fontes de recursos:
+1) Remuneração das disponibilidades do Tesouro Nacional
+2) Títulos de responsabilidade do Tesouro Nacional.
 
-Com a inclusão das duas fontes a seguridade social passa a apresentar um défict crescente.
+Com a inclusão das duas fontes a seguridade social passa a apresentar um déficit crescente.
 
-```{r, saldo DRU x fontes fiscais}
+```{r, saldo DRU x fontes fiscais, fig.width = 12,  fig.height= 9}
 #Recursos de contribuições sociais carimbados como fonte 100 (recursos ordinários)
 dru_1<-  nat_rec%>%
   filter(especie_cod == "121", fonte_cod == "100" )
@@ -1014,7 +1036,7 @@ p <- plot_ly(dru_ord_1)%>%
   geom_point(color = "white", size =0.5)+
   geom_line(group=1, color = "gray")+
   theme_bw()+
-  ggtitle("DRU x recursos fiscais destinados à seguridade social", "Governo Federal 2005 a 2018 (R$ bi nominais)")+
+  ggtitle("DRU (azul) x recursos fiscais destinados à seguridade social", "Governo Federal 2005 a 2018 (R$ bi nominais)")+
   xlab("")+
   ylab("")+
   theme(
@@ -1027,8 +1049,8 @@ p <- plot_ly(dru_ord_1)%>%
     breaks = c("DRU", "RECURSOS ORDINARIOS", "REMUNERACAO DAS DISPONIB. DO TESOURO NACIONAL", "TITULOS DE RESPONSABILID.DO TESOURO NACIONAL"),
     labels = c("DRU", "Recursos Ordinários", "Remuneração das Disponibilidades", "Títulos do Tesouro")
   )+
-  geom_text(aes(label = sprintf("%0.1f", round(value, digits = 1))), size= 2.5, color = "white"  ,vjust=-0.25 , position = position_dodge(0.9))+
-  theme(axis.text.x = element_text(size = 7, hjust = 1, vjust = 1))
+  geom_text(aes(label = sprintf("%0.1f", round(value, digits = 1))), size= 3.5, color = "white"  ,vjust=-0.25 , position = position_dodge(0.1))+
+  theme(axis.text.x = element_text(size = 9, hjust = 0, vjust = 0),legend.position="top")
 
 
 p
@@ -1040,23 +1062,58 @@ p
 
 ```
 
+***
+### Comentários Finais
+
+A desvinculação de receitas aumenta a flexibilidade da gestão de caixa do governo federal.
+
+Caso a PEC DDD seja aprovada, o governo terá mais liberdade para alocar os recursos públicos.
 
 
+
+***
+
+#### Disponibilizei os gráficos no plot.ly:
+
+1) arrecadação por fonte https://chart-studio.plot.ly/~andreferraribr/21.embed
+
+2) DRU  https://chart-studio.plot.ly/~andreferraribr/23.embed
+
+3) CIDE arrecadação https://chart-studio.plot.ly/~andreferraribr/25.embed
+
+4) CIDE pagamento https://chart-studio.plot.ly/~andreferraribr/35.embed
+
+5) pagamento por fonte: https://chart-studio.plot.ly/~andreferraribr/27.embed
+
+6) pagamentos de aposentadorias e pensões https://chart-studio.plot.ly/~andreferraribr/29.embed
+
+7) DRU x fonte 100 https://chart-studio.plot.ly/~andreferraribr/33.embed
+
+8) DRU x fontes fiscais https://chart-studio.plot.ly/~andreferraribr/31.embed
+
+
+***
+#### Para maiores informações sobre fontes de recursos, acessar:
+
+1) Fontes de Recursos : [https://www12.senado.leg.br/orcamento/glossario/fonte-de-recursos] 
+
+2) Orçamento Fácil: vinculação de receitas: [https://www.youtube.com/watch?v=OPdGF5QGXyE]
+
+
+***  
 Obtive ajuda importante nos seguintes endereços:
 
-
-   
 
 1) definir cores:    
   [https://www.w3.org/TR/css-color-3/#svg-color]   
   [https://www.w3schools.com/colors/colors_picker.asp?colorhex=FF0000]   
 
-2) formatar gráficos:   
+2) formatar gráficos e R markdown:   
   [file:///C:/Users/03092181794/Desktop/R/sankey/final.html]   
   [https://bookdown.org/lyzhang10/lzhang_r_tips_book/how-to-plot-data.html]   
   [https://aledemogr.com/2017/05/29/plots-based-on-un-data-in-r/]   
   [https://plot.ly/r/graphing-multiple-chart-types/]   
-  
+  [https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf]
 
 
 
