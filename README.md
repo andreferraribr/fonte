@@ -3,9 +3,6 @@
   <head>
     <title>Plano Mais Brasil</title>
   </head>
-  <body>
-    <p>PEC DDD (desvincular, desindexar e desobrigar) <strong>p</strong> </p>
-  </body>
 </html>
 
 
