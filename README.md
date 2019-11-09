@@ -63,72 +63,6 @@ Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recurs
 Vídeo sobre a DRU [https://www.youtube.com/watch?v=nb9LkOjUZyg]
 
 
-### Classificação por fonte/destinação de recurso
-
-A seguir, texto extraído de documento pulicado no site do Tesouro Nacional:
-
-A classificação orçamentária por fontes/destinações de recursos tem como objetivo identificar
-as fontes de financiamento dos gastos públicos. As fontes/destinações de recursos reúnem
-recursos oriundos de determinadas Naturezas de Receita, conforme regras previamente
-estabelecidas. Por meio do orçamento público, essas fontes/destinações são associadas a
-determinadas despesas de forma a evidenciar os meios para atingir os objetivos públicos.   
-
-Como mecanismo integrador entre a receita e a despesa, o código de fonte/destinação de
-recursos exerce um duplo papel no processo orçamentário. Para a receita orçamentária, esse
-código tem a finalidade de indicar a destinação de recursos para a realização de determinadas
-despesas orçamentárias. Para a despesa orçamentária, identifica a origem dos recursos que
-estão sendo utilizados.
-
-[http://www.tesouro.fazenda.gov.br/documents/10180/676688/Item+11+-+Classifica%C3%A7%C3%A3o+por+Fonte-Destina%C3%A7%C3%A3o+de+Recursos.pdf/988a562d-cd16-4b00-ad16-90d8b7f6bb8d]
-
-***   
-
-#### Arrecadação e fonte CIDE
-
-Utilizamos a CIDE Combustíveis para ilustrar a classificação orçamentária por fontes/destinações de recursos.
-
-Em 2018, parte da arrecadação da CIDE Combustíveis foi carimbada como fonte 111 (CIDE) e parte como fonte 100 (recursos ordinários).
-
-<div>
-    <a href="https://plot.ly/~andreferraribr/25/?share_key=DC5Fnh8M0QkvtoV9bUFVLJ" target="_blank" title="cide" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/25.png?share_key=DC5Fnh8M0QkvtoV9bUFVLJ" alt="cide" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:25" sharekey-plotly="DC5Fnh8M0QkvtoV9bUFVLJ" src="https://plot.ly/embed.js" async></script>
-</div>
-
-***   
-
-
-### Pagamentos
-
-#### Pagamentos e fonte CIDE 
-
-Até aqui o nosso foco foi o ingresso de recursos, a arrecadação.
-
-Agora, vamos nos concentrar na destinação dos recursos, a despesa.
-
-No caso específico da CIDE, a lei 10.336/2001 estabelece as seguintes destinações para os recursos arrecadados:
-
-I - pagamento de subsídios a preços ou transporte de álcool combustível, de gás natural e seus derivados e de derivados de petróleo;
-
-II - financiamento de projetos ambientais relacionados com a indústria do petróleo e do gás; e
-
-III - financiamento de programas de infra-estrutura de transportes.
-
-Nosso objetivo é apenas mostrar a destinação da CIDE por elemento da despesa.
-
-O gráfico abaixo aponta a destinação de recursos da CIDE para:
-
-1) obras e instalações   
-
-2) distribuição constitucional ou legal de receitas   
-
-3) outros serviços de terceiros - pessoa jurídica   
-
-***
-
-Não entramos nos detalhes da destinação dos recursos a ponto de verificar se a lei foi obedecida. De qualquer forma, segue link de planilha com as ações governamentais pagas com recursos da fonte CIDE. [https://github.com/andreferraribr/fonte/blob/master/cide.xlsx?raw=true]
-
-O Manual Técnico do Orçamento traz os conceitos de elemento da despesa: [http://www.planejamento.gov.br/assuntos/orcamento-1/informacoes-orcamentarias/arquivos/MTOs/mto_atual.pdf]
-
 
 ### Todos os pagamento de 2018   
 
@@ -141,6 +75,10 @@ Destacamos, em vermelho, os recursos ordinários.
 
 Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de elementos da despesa.
 
+<div>
+    <a href="https://plot.ly/~andreferraribr/27/?share_key=LVeb10LBU6TY7nhiV2IFqs" target="_blank" title="despesa 2018" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/27.png?share_key=LVeb10LBU6TY7nhiV2IFqs" alt="despesa 2018" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:27" sharekey-plotly="LVeb10LBU6TY7nhiV2IFqs" src="https://plot.ly/embed.js" async></script>
+</div>
 
 
 ***   
