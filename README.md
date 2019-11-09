@@ -81,6 +81,13 @@ Inúmeras espécies irrigam os recursos ordinários: impostos, taxas, contribui�
 Os recursos ordinários, por sua vez, irrigam o orçamento fiscal.
 
 
+
+<div>
+    <a href="https://plot.ly/~andreferraribr/21/?share_key=jzAZjdvxDR2q8E8ICne3pO" target="_blank" title="emaranhado" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/21.png?share_key=jzAZjdvxDR2q8E8ICne3pO" alt="emaranhado" style="max-width: 100%;width: 1500px;"  width="1500" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:21" sharekey-plotly="jzAZjdvxDR2q8E8ICne3pO" src="https://plot.ly/embed.js" async></script>
+</div>
+
+
 #### DRU x Orçamento da Seguridade Social
 
 Criamos um filtro para melhorar a compreensão do fluxo da arrecadação.
