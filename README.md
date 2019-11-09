@@ -1,10 +1,10 @@
-<!doctype html>
+
 <html>
   <head>
     <title>Plano Mais Brasil</title>
   </head>
   <body>
-    <p>PEC DDD (desvincular, desindexar e desobrigar) <strong>p</strong> tag and its contents.</p>
+    <p>PEC DDD (desvincular, desindexar e desobrigar) <strong>p</strong> </p>
   </body>
 </html>
 
