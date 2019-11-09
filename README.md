@@ -1,27 +1,18 @@
 <!doctype html>
 <html>
   <head>
-    <title>This is the title of the webpage!</title>
+    <title>Plano Mais Brasil</title>
   </head>
   <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <p>PEC DDD (desvincular, desindexar e desobrigar) <strong>p</strong> tag and its contents.</p>
   </body>
 </html>
 
 
----
-title: "Plano Mais Brasil:"
-subtitle: "PEC DDD (desvincular, desindexar e desobrigar)"
-output:
-  html_document:
-    code_folding: hide
----
-***   
-
 ### Fonte de recursos:
 #### A chave para entender a desvinculação do orçamento federal
 
-No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas [https://www.youtube.com/watch?v=v9PENV_E7vM].
+No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas 
 
 Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação de recursos?
 
@@ -30,40 +21,6 @@ Vamos utilizar dados abertos para explicar:
 1) o fluxo orçamentário
 2) a desvinculação de recursos
 3) o conceito de fonte de recursos
-
-import chart_studio.tools as tls
-tls.get_embed('https://plot.ly/~elizabethts/9/')
-
-***
-
-#### Para programadores e curiosos
-
-Coletei os dados no portal Siga Brasil do Senado Federal [https://www12.senado.leg.br/orcamento/sigabrasil] e depois preparei o código para gerar os gráficos.
-
-Disponibilizei o código e arquivos no GitHub: https://github.com/andreferraribr/fonte
-
-
-
-
-
-
-#### Preparar os dados
-
-A partir do Siga Brasil baixamos as planilhas:
-
-1) "nat_rec", com detalhes sobre os valores arrecadados.   
-2) "outflux", com detalhes sobre os pagamentos totais (pagamentos da LOA + pagamentos de restos a pagar).
-
-Vídeo sobre LOA e restos a pagar [https://www.youtube.com/watch?v=ZcqgaEjJ7Aw]
-
-
-
-<div>
-    <a href="https://plot.ly/~andreferraribr/39/?share_key=oMkE7R8a7arSoJZPpFYWcZ" target="_blank" title="dru x recursos ordinários" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/39.png?share_key=oMkE7R8a7arSoJZPpFYWcZ" alt="dru x recursos ordinários" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:39" sharekey-plotly="oMkE7R8a7arSoJZPpFYWcZ" src="https://plot.ly/embed.js" async></script>
-</div>
-
-
 
 ***   
 
@@ -132,6 +89,10 @@ Utilizamos a CIDE Combustíveis para ilustrar a classificação orçamentária p
 
 Em 2018, parte da arrecadação da CIDE Combustíveis foi carimbada como fonte 111 (CIDE) e parte como fonte 100 (recursos ordinários).
 
+<div>
+    <a href="https://plot.ly/~andreferraribr/25/?share_key=DC5Fnh8M0QkvtoV9bUFVLJ" target="_blank" title="cide" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/25.png?share_key=DC5Fnh8M0QkvtoV9bUFVLJ" alt="cide" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:25" sharekey-plotly="DC5Fnh8M0QkvtoV9bUFVLJ" src="https://plot.ly/embed.js" async></script>
+</div>
 
 ***   
 
@@ -214,6 +175,13 @@ O saldo é positivo quando a seguridade social transfere mais recursos do que re
 
 Sob esse prisma, a seguridade fiscal foi superavitária em todo o período, com exceção de 2014, 2016 e 2017. Contudo, o déficit de apenas dois anos é praticamente igual a todo o superávitdo período.
 
+
+<div>
+    <a href="https://plot.ly/~andreferraribr/39/?share_key=oMkE7R8a7arSoJZPpFYWcZ" target="_blank" title="dru x recursos ordinários" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/39.png?share_key=oMkE7R8a7arSoJZPpFYWcZ" alt="dru x recursos ordinários" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:39" sharekey-plotly="oMkE7R8a7arSoJZPpFYWcZ" src="https://plot.ly/embed.js" async></script>
+</div>
+
+
 ***   
 
 
@@ -227,6 +195,13 @@ Abaixo exibimos o gráfico após a inclusão de duas fontes de recursos:
 
 Com a inclusão das duas fontes a seguridade social passa a apresentar um déficit crescente.
 
+
+<div>
+    <a href="https://plot.ly/~andreferraribr/41/?share_key=9PtTkxbKNjr7l8Om2F2b2T" target="_blank" title="dru x recursos ordinário e outras fontes fiscais" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/41.png?share_key=9PtTkxbKNjr7l8Om2F2b2T" alt="dru x recursos ordinário e outras fontes fiscais" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:41" sharekey-plotly="9PtTkxbKNjr7l8Om2F2b2T" src="https://plot.ly/embed.js" async></script>
+</div>
+
+
 ***
 ### Comentários Finais
 
@@ -234,27 +209,6 @@ A desvinculação de receitas aumenta a flexibilidade da gestão de caixa do gov
 
 Caso a PEC DDD seja aprovada, o governo terá mais liberdade para alocar os recursos públicos.
 
-
-
-***
-
-#### Disponibilizei os gráficos no plot.ly:
-
-1) arrecadação por fonte https://chart-studio.plot.ly/~andreferraribr/21.embed
-
-2) DRU  https://chart-studio.plot.ly/~andreferraribr/23.embed
-
-3) CIDE arrecadação https://chart-studio.plot.ly/~andreferraribr/25.embed
-
-4) CIDE pagamento https://chart-studio.plot.ly/~andreferraribr/35.embed
-
-5) pagamento por fonte: https://chart-studio.plot.ly/~andreferraribr/27.embed
-
-6) pagamentos de aposentadorias e pensões https://chart-studio.plot.ly/~andreferraribr/29.embed
-
-7) DRU x fonte 100 https://chart-studio.plot.ly/~andreferraribr/33.embed
-
-8) DRU x fontes fiscais https://chart-studio.plot.ly/~andreferraribr/31.embed
 
 
 ***
