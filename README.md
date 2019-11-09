@@ -48,9 +48,10 @@ Vídeo sobre LOA e restos a pagar [https://www.youtube.com/watch?v=ZcqgaEjJ7Aw]
 
 
 <div>
-    <a href="https://plot.ly/~andreferraribr/41/?share_key=9PtTkxbKNjr7l8Om2F2b2T" target="_blank" title="dru x recursos ordinário e outras fontes fiscais" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/41.png?share_key=9PtTkxbKNjr7l8Om2F2b2T" alt="dru x recursos ordinário e outras fontes fiscais" style="max-width: 100%;width: 900px;"  width="1200" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:41" sharekey-plotly="9PtTkxbKNjr7l8Om2F2b2T" src="https://plot.ly/embed.js" async></script>
+    <a href="https://plot.ly/~andreferraribr/39/?share_key=oMkE7R8a7arSoJZPpFYWcZ" target="_blank" title="dru x recursos ordinários" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/39.png?share_key=oMkE7R8a7arSoJZPpFYWcZ" alt="dru x recursos ordinários" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:39" sharekey-plotly="oMkE7R8a7arSoJZPpFYWcZ" src="https://plot.ly/embed.js" async></script>
 </div>
+
 
 
 ***   
