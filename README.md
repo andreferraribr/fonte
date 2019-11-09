@@ -40,9 +40,10 @@ Os recursos ordinários, por sua vez, irrigam o orçamento fiscal.
 gráfico
 
 <div>
-    <a href="https://plot.ly/~andreferraribr/21/?share_key=jzAZjdvxDR2q8E8ICne3pO" target="_blank" title="emaranhado" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/21.png?share_key=jzAZjdvxDR2q8E8ICne3pO" alt="emaranhado" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <a href="https://plot.ly/~andreferraribr/21/?share_key=jzAZjdvxDR2q8E8ICne3pO" target="_blank" title="emaranhado" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/21.png?share_key=jzAZjdvxDR2q8E8ICne3pO" alt="emaranhado" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="andreferraribr:21" sharekey-plotly="jzAZjdvxDR2q8E8ICne3pO" src="https://plot.ly/embed.js" async></script>
 </div>
+
 
 
 #### DRU x Orçamento da Seguridade Social
@@ -59,8 +60,10 @@ Devido à DRU, a seguridade social perde a garantia de ter R$ 120 bilhões gasto
 
 Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recursos.
 
-
-Vídeo sobre a DRU [https://www.youtube.com/watch?v=nb9LkOjUZyg]
+<div>
+    <a href="https://plot.ly/~andreferraribr/23/?share_key=iapCWfSlqbJWq6tNV3CXFu" target="_blank" title="DRU" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/23.png?share_key=iapCWfSlqbJWq6tNV3CXFu" alt="DRU" style="max-width: 100%;width: 700px;"  width="700" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:23" sharekey-plotly="iapCWfSlqbJWq6tNV3CXFu" src="https://plot.ly/embed.js" async></script>
+</div>
 
 
 
@@ -76,7 +79,7 @@ Destacamos, em vermelho, os recursos ordinários.
 Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de elementos da despesa.
 
 <div>
-    <a href="https://plot.ly/~andreferraribr/27/?share_key=LVeb10LBU6TY7nhiV2IFqs" target="_blank" title="despesa 2018" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/27.png?share_key=LVeb10LBU6TY7nhiV2IFqs" alt="despesa 2018" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <a href="https://plot.ly/~andreferraribr/27/?share_key=LVeb10LBU6TY7nhiV2IFqs" target="_blank" title="despesa 2018" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/27.png?share_key=LVeb10LBU6TY7nhiV2IFqs" alt="despesa 2018" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="andreferraribr:27" sharekey-plotly="LVeb10LBU6TY7nhiV2IFqs" src="https://plot.ly/embed.js" async></script>
 </div>
 
@@ -96,6 +99,10 @@ Destacamos, em vermelho, quatro pontos interessantes. Em termos nominais, no per
 4) R$ 185 bi de recursos do orçamento fiscal para cobrir despesas com aposentadorias e pensões
 ***   
 
+<div>
+    <a href="https://plot.ly/~andreferraribr/29/?share_key=ewNtEiZEVQUYzDRtXPTlHF" target="_blank" title="pensão aposentadoria" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/29.png?share_key=ewNtEiZEVQUYzDRtXPTlHF" alt="pensão aposentadoria" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:29" sharekey-plotly="ewNtEiZEVQUYzDRtXPTlHF" src="https://plot.ly/embed.js" async></script>
+</div>
 
 ### DRU x Fonte Recursos Ordinários
 
@@ -115,9 +122,10 @@ Sob esse prisma, a seguridade fiscal foi superavitária em todo o período, com 
 
 
 <div>
-    <a href="https://plot.ly/~andreferraribr/39/?share_key=oMkE7R8a7arSoJZPpFYWcZ" target="_blank" title="dru x recursos ordinários" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/39.png?share_key=oMkE7R8a7arSoJZPpFYWcZ" alt="dru x recursos ordinários" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:39" sharekey-plotly="oMkE7R8a7arSoJZPpFYWcZ" src="https://plot.ly/embed.js" async></script>
+    <a href="https://plot.ly/~andreferraribr/33/?share_key=btWlg6XfwuJFlsgnbps41o" target="_blank" title="dru x fontes 100" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/33.png?share_key=btWlg6XfwuJFlsgnbps41o" alt="dru x fontes 100" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:33" sharekey-plotly="btWlg6XfwuJFlsgnbps41o" src="https://plot.ly/embed.js" async></script>
 </div>
+
 
 
 ***   
@@ -135,9 +143,10 @@ Com a inclusão das duas fontes a seguridade social passa a apresentar um défic
 
 
 <div>
-    <a href="https://plot.ly/~andreferraribr/41/?share_key=9PtTkxbKNjr7l8Om2F2b2T" target="_blank" title="dru x recursos ordinário e outras fontes fiscais" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/41.png?share_key=9PtTkxbKNjr7l8Om2F2b2T" alt="dru x recursos ordinário e outras fontes fiscais" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:41" sharekey-plotly="9PtTkxbKNjr7l8Om2F2b2T" src="https://plot.ly/embed.js" async></script>
+    <a href="https://plot.ly/~andreferraribr/31/?share_key=0OIH61MInR8vV1fqG0HJEm" target="_blank" title="dru x fontes fiscais" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/31.png?share_key=0OIH61MInR8vV1fqG0HJEm" alt="dru x fontes fiscais" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:31" sharekey-plotly="0OIH61MInR8vV1fqG0HJEm" src="https://plot.ly/embed.js" async></script>
 </div>
+
 
 
 ***
