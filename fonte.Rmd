@@ -178,7 +178,7 @@ colnames(links_final) <- c("source", "target", "value")
 
 p <- plot_ly(
     type = "sankey",
-    width = 1200, height = 900,
+    width = 800, height = 800,
     orientation = "h",
     node = list(
       label = nodes$name,
@@ -311,7 +311,7 @@ colnames(links_final) <- c("source", "target", "value")
 
 p <- plot_ly(
     type = "sankey",
-    width = 1200, height = 900,
+    width = 800, height = 800,
     orientation = "h",
     node = list(
       label = nodes$name,
@@ -368,277 +368,6 @@ despesas orçamentárias. Para a despesa orçamentária, identifica a origem dos
 estão sendo utilizados.
 
 [http://www.tesouro.fazenda.gov.br/documents/10180/676688/Item+11+-+Classifica%C3%A7%C3%A3o+por+Fonte-Destina%C3%A7%C3%A3o+de+Recursos.pdf/988a562d-cd16-4b00-ad16-90d8b7f6bb8d]
-
-***   
-
-#### Arrecadação e fonte CIDE
-
-Utilizamos a CIDE Combustíveis para ilustrar a classificação orçamentária por fontes/destinações de recursos.
-
-Em 2018, parte da arrecadação da CIDE Combustíveis foi carimbada como fonte 111 (CIDE) e parte como fonte 100 (recursos ordinários).
-
-```{r, arrecadação CIDE (repetição do chunk anterior agora filtrado por natureza da receita "12200821" - CIDE) }
-# utilizar group_by para incluir as variáveis origem e esfera no gráfico sankey
-nat_rec_s<- nat_rec%>%
-  # filtra pelo ano de 2018 e CIDE COMBUSTÍVEIS COMERCIALIZAÇÃO PRINCIPAL (Natureza da Receita 12200821)
-
-  filter(ano == "2018",nat_cod == "12200821" , influx_reais>1 )%>%
-  group_by( nat, esfera_in, fonte_name_cod)%>%
-  summarise(value = sum(influx_reais/1000000000))%>%
-  arrange(desc(value ))
-
-# arredondar valor para melhorar visualização da tabela
-nat_rec_s$value<-as.numeric(myround(nat_rec_s$value, 1) )
-names<- vector()
-nodes<- vector()
-
-# loop para extrair nomes dos nodes a partir da df influx_s
-for(i in 1:ncol(nat_rec_s)-1)
-{
-for(j in 1:NROW(nat_rec_s[,i]))
-{
-names <- c(names,nat_rec_s[j,i]) ;
-}
-}
-
-# obeter apenas os nomes únicos.
-name<- unique(as.character(names))
-
-## reverter a ordem de nodes 
-
-# criar nodes
-nodes<- data.frame(cbind(node = c((0:(length(name)-1))), name))
-
-nodes$node <- as.numeric(as.character(nodes$node))
-
-## criar links
-
-links <- nat_rec_s%>%
-  group_by_at(1:2)%>%
-  summarise(value = sum(value))
-colnames(links)<-c("source","target","value")
-##
-links<-as.data.frame(links)
-
-## criar links adcionais caso a df influx_s tenha mais de duas variáveis
-
-for(i in 1:(ncol(nat_rec_s)-3))
-{
-loop_link <- nat_rec_s%>%
-  group_by_at((1+i):(2+i))%>%
-  summarise(teste = sum(value))
-loop_link<-as.data.frame(loop_link)
-colnames(loop_link)<-c("source","target","value")
-
-# juntar os links
-links<-rbind(links,loop_link)
-}
-
-# mesclar nodes aos valores
-links <- merge(links, nodes, by.x = "target", by.y = "name")
-links <- merge(links, nodes, by.x = "source", by.y = "name")
-
-## remover duplicados 
-links <- distinct(links, target,source, .keep_all= TRUE)
-
-links_final <- links[ , c("node.y", "node.x", "value")]
-colnames(links_final) <- c("source", "target", "value")
-
-p <- plot_ly(
-    type = "sankey",
-    orientation = "h",
-    width = 1200, height = 300,
-    node = list(
-      label = nodes$name,
-      # quantidade de cores == lenght nodes
-      color = c("lightgray", "red", "pink","red"),
-      pad = 15,
-      thickness = 20,
-      line = list(
-        color = "black",
-        width = 0.5
-      )
-    ),
-
-    link = list(
-      source = links_final$source,
-      target = links_final$target,
-      value =  links_final$value,
-      # quantidade de cores == lenght links
-      color = c("lightgray", "red", "lightgray")
-    )
-  ) %>% 
-  layout(
-    title = "Governo Federal 2018: CIDE COMBUSTÍVEIS COMERCIALIZAÇÃO PRINCIPAL x fonte de recurso (R$ Bi)",
-    font = list(
-      size = 10
-    )
-)
-
-
-
-# Create a shareable link to your chart
-# Set up API credentials: https://plot.ly/r/cide
- #chart_link = api_create(p, filename="cide")
- #chart_link
-# exibir gráfico e tabela
-
-
-p
-```
-
-***   
-
-
-### Pagamentos
-
-#### Pagamentos e fonte CIDE 
-
-Até aqui o nosso foco foi o ingresso de recursos, a arrecadação.
-
-Agora, vamos nos concentrar na destinação dos recursos, a despesa.
-
-No caso específico da CIDE, a lei 10.336/2001 estabelece as seguintes destinações para os recursos arrecadados:
-
-I - pagamento de subsídios a preços ou transporte de álcool combustível, de gás natural e seus derivados e de derivados de petróleo;
-
-II - financiamento de projetos ambientais relacionados com a indústria do petróleo e do gás; e
-
-III - financiamento de programas de infra-estrutura de transportes.
-
-Nosso objetivo é apenas mostrar a destinação da CIDE por elemento da despesa.
-
-O gráfico abaixo aponta a destinação de recursos da CIDE para:
-
-1) obras e instalações   
-
-2) distribuição constitucional ou legal de receitas   
-
-3) outros serviços de terceiros - pessoa jurídica   
-
-***
-
-Não entramos nos detalhes da destinação dos recursos a ponto de verificar se a lei foi obedecida. De qualquer forma, segue link de planilha com as ações governamentais pagas com recursos da fonte CIDE. [https://github.com/andreferraribr/fonte/blob/master/cide.xlsx?raw=true]
-
-O Manual Técnico do Orçamento traz os conceitos de elemento da despesa: [http://www.planejamento.gov.br/assuntos/orcamento-1/informacoes-orcamentarias/arquivos/MTOs/mto_atual.pdf]
-
-```{r, destinação da CIDE (semelhante ao chunk anterior, mas com dados dos pagamentos/outflux)}
-# filtra nodes objeto do estudo
-# Governo Federal 2018: Pagamentos realizados com a fonte CIDE (R$ Bi)
-outflux_s<- outflux%>%
-  filter(ano == "2018", outflux_reais>1, fonte_cod == "111" )%>%
-  group_by(fonte, elemento)%>%
-  summarise(value = sum(outflux_reais/1000000000))%>%
-  arrange(desc(value ))
-
-
-
-
-# arredondar valor para melhorar visualização da tabela
-
-outflux_s$value<-as.numeric(myround(outflux_s$value, 1))
-
-
-nodes<- vector()
-names<- c()
-
-
-# loop para extrair nomes dos nodes a partir da df outflux_s
-for(i in 1:ncol(outflux_s)-1)
-{
-for(j in 1:NROW(outflux_s[,i]))
-{
-names <- c(names,outflux_s[j,i]) ;
-}
-}
-
-
-# obeter apenas os nomes únicos.
-name<- unique(as.character(names))
-
-## reverter a ordem de nodes 
-
-# criar nodes
-nodes<- data.frame(cbind(node = c((0:(length(name)-1))), name))
-
-nodes$node <- as.numeric(as.character(nodes$node))
-
-
-
-
-
-## criar links
-
-links <- outflux_s%>%
-  group_by_at(1:2)%>%
-  summarise(value = sum(value))
-colnames(links)<-c("source","target","value")
-##
-links<-as.data.frame(links)
-
-
-## criar links adcionais caso a df outflux_s tenha mais de duas variáveis
-loop_link<-c("")
-
-for(i in 1:(ncol(outflux_s)-3))
-{
-loop_link <- outflux_s%>%
-  group_by_at((1+i):(2+i))%>%
-  summarise(teste = sum(value))
-loop_link<-as.data.frame(loop_link)
-colnames(loop_link)<-c("source","target","value")
-
-# juntar os links
-links<-rbind(links,loop_link)
-}
-
-# mesclar nodes aos valores
-links <- merge(links, nodes, by.x = "target", by.y = "name")
-links <- merge(links, nodes, by.x = "source", by.y = "name")
-
-## remover duplicados 
-links <- distinct(links, target,source, .keep_all= TRUE)
-
-
-links_final <- links[ , c("node.y", "node.x", "value")]
-colnames(links_final) <- c("source", "target", "value")
-
-
-p <- plot_ly(
-    type = "sankey",
-    orientation = "h",
-    width = 1200, height = 300,
-    node = list(
-      label = nodes$name,
-      color = c("pink", rep("lightgray",3)),
-      pad = 15,
-      thickness = 20,
-      line = list(
-        color = "black",
-        width = 0.5
-      )
-    ),
-
-    link = list(
-      source = links_final$source,
-      target = links_final$target,
-      value =  links_final$value
-    )
-  ) %>% 
-  layout(
-    title = "Governo Federal 2018: Pagamentos realizados com a fonte CIDE (R$ Bi)",
-    font = list(
-      size = 10
-    )
-)
-
-# Create a shareable link to your chart
-
-#chart_link = api_create(p, filename="Pagamentos realizados com a fonte CIDE")
-#chart_link
-p
-
-```
 
 ***   
 
@@ -723,7 +452,7 @@ colnames(links_final) <- c("source", "target", "value")
 p <- plot_ly(
     type = "sankey",
     orientation = "h",
-    width = 1200, height = 1000,
+    width = 800, height = 800,
     node = list(
       label = nodes$name,
       color = c(rep("lightgray",13),"red",rep("lightgray",130)),
@@ -759,7 +488,126 @@ p
 
 ***   
 
+#### Todos os pagamentos de 2018: Versão compacta (filtrar valores maiores que R$ 10 bi)
 
+Apliquei um filtro para criar a rubica "demais".
+
+Classifiquei como "demais" as fontes com valor individual inferior a R$ 10 bi. Adoteio o mesmo procedimento para os elementos da despesa.
+
+Abaixo a versão compactada dos pagamentos de 2018.
+
+```{r, compacto Governo Federal 2018: pagamentos por esfera, resultado primário, fonte e elemento  (R$ bi),fig.width = 15,  fig.height= 9}
+outflux_s<- outflux%>%
+  # filtra pelo ano de 2018 e valore maiores que R$ 0
+  filter(ano == 2018,outflux_reais>0 )%>%
+# utilizar group_by para incluir as variáveis specie_name_cod, fonte_name_cod, esfera_in no gráfico sankey
+    group_by( esfera_out, res_primario, fonte, elemento)%>%
+ # transformar em bilhões de reais
+   summarise(total = sum(outflux_reais/1000000000))%>%
+  arrange(desc(total ))
+  # cria variávies para identificar elementos e fontes menores que determinado valor (R$ 10 bi) e reclassificá-las como "demais"
+outflux_s<- outflux_s%>%
+    mutate(fonte_demais = ifelse(total > 10, fonte, "demais fontes") )%>%
+  mutate(elemento_demais = ifelse(total > 10, elemento, "demais elementos") )%>%
+  group_by( esfera_out, res_primario, fonte_demais, elemento_demais)%>%
+  summarise(value = sum(total))
+
+
+outflux_s$value<-round(outflux_s$value, 1)
+
+names<- c()
+
+# loop para extrair nomes dos nodes a partir da df outflux_s
+for(i in 1:ncol(outflux_s)-1)
+{
+for(j in 1:NROW(outflux_s[,i]))
+{
+names <- c(names,outflux_s[j,i]) ;
+}
+}
+
+
+# obeter apenas os nomes únicos.
+name<- unique(as.character(names))
+
+## reverter a ordem de nodes 
+
+# criar nodes
+nodes<- data.frame(cbind(node = c((0:(length(name)-1))), name))
+
+nodes$node <- as.numeric(as.character(nodes$node))
+
+## criar links
+
+links <- outflux_s%>%
+  group_by_at(1:2)%>%
+  summarise(value = sum(value))
+colnames(links)<-c("source","target","value")
+##
+links<-as.data.frame(links)
+
+## criar links adcionais caso a df outflux_s tenha mais de duas variáveis
+loop_link<-c("")
+
+for(i in 1:(ncol(outflux_s)-3))
+{
+loop_link <- outflux_s%>%
+  group_by_at((1+i):(2+i))%>%
+  summarise(teste = sum(value))
+loop_link<-as.data.frame(loop_link)
+colnames(loop_link)<-c("source","target","value")
+
+# juntar os links
+links<-rbind(links,loop_link)
+}
+
+# mesclar nodes aos valores
+links <- merge(links, nodes, by.x = "target", by.y = "name")
+links <- merge(links, nodes, by.x = "source", by.y = "name")
+
+
+links_final <- links[ , c("node.y", "node.x", "value")]
+colnames(links_final) <- c("source", "target", "value")
+
+p <- plot_ly(
+    type = "sankey",
+    orientation = "h",
+    width = 800, height = 800,
+    node = list(
+      label = nodes$name,
+      color = c(rep("lightgray",16),"red",rep("lightgray",36)),
+      pad = 15,
+      thickness = 20,
+      line = list(
+        color = "black",
+        width = 0.5
+      )
+    ),
+
+    link = list(
+      source = links_final$source,
+      target = links_final$target,
+      value =  links_final$value
+    )
+  ) %>% 
+  layout(
+    title = "Governo Feredal 2018: pagamentos por esfera, indicador de resultado primário, fonte de recurso e elemento da despesa (R$ bi)",
+    font = list(
+      size = 8
+    )
+)
+
+# Create a shareable link to your chart
+# Set up API credentials: https://plot.ly/r/outflux
+chart_link = api_create(p, filename="despesa 2018")
+chart_link
+p
+
+
+```
+
+
+***   
 ### Fonte e pagamentos de pensão e aposentadoria
 
 O controle por fonte permite visualizar quais fontes o governo utilizou para pagar despesas com pensões e aposentadorias.
@@ -848,7 +696,7 @@ colnames(links_final) <- c("source", "target", "value")
 p <- plot_ly(
     type = "sankey",
     orientation = "h",
-    width = 1200, height = 1000,
+    width = 800, height = 800,
     node = list(
       label = nodes$name,
        # quantidade de cores == lenght nodes
