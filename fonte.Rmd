@@ -961,12 +961,12 @@ p <- plot_ly(dru_ord)%>%
   geom_text(aes(label = sprintf("%0.1f", round(value, digits = 1))), size= 3.5, color = "white"  ,vjust=-0.25, position = position_dodge(0.1))+
   theme(axis.text.x = element_text(size = 9, hjust = 0, vjust = 0), legend.position="top")
 
+
+
 p
 
-
-
-#chart_link = api_create(p, filename="dru x fontes 100")
-#chart_link
+# chart_link = api_create(p, filename="dru x recursos ordinários")
+# chart_link
 
 
 ```
@@ -1053,11 +1053,11 @@ p <- plot_ly(dru_ord_1)%>%
   theme(axis.text.x = element_text(size = 9, hjust = 0, vjust = 0),legend.position="top")
 
 
+
 p
 
-
-#chart_link = api_create(p, filename="dru x fontes fiscais")
-#chart_link
+# chart_link = api_create(p, filename="dru x recursos ordinário e outras fontes fiscais")
+# chart_link
 
 
 ```
