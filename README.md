@@ -81,9 +81,25 @@ Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de eleme
 </div>
 
 
+
+
 ***   
+#### Todos os pagamentos de 2018: Versão compacta (filtrar valores maiores que R$ 10 bi)
+
+Apliquei um filtro para criar a rubrica "demais".
+
+Classifiquei como "demais" as fontes com valor individual inferior a R$ 10 bi. Adoteio o mesmo procedimento para os elementos da despesa.
+
+Abaixo a versão compactada dos pagamentos de 2018.
+
+<div>
+    <a href="https://plot.ly/~andreferraribr/48/?share_key=rWQWENbpNSG2MvYRIIvUiN" target="_blank" title="despesa 2018 (versão compacta)" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/48.png?share_key=rWQWENbpNSG2MvYRIIvUiN" alt="despesa 2018 (versão compacta)" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:48" sharekey-plotly="rWQWENbpNSG2MvYRIIvUiN" src="https://plot.ly/embed.js" async></script>
+</div>
 
 
+
+***
 ### Fonte e pagamentos de pensão e aposentadoria
 
 O controle por fonte permite visualizar quais fontes o governo utilizou para pagar despesas com pensões e aposentadorias.
