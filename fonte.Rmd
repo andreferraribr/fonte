@@ -207,8 +207,8 @@ p <- plot_ly(
 
 
 # Create a shareable link to your chart
-chart_link = api_create(p, filename="DRU")
-chart_link
+#chart_link = api_create(p, filename="DRU")
+#chart_link
 # exibir gráfico e tabela
 
 p
@@ -354,8 +354,8 @@ p <- plot_ly(
 
 # Create a shareable link to your chart
 # Set up API credentials: https://plot.ly/r/outflux
-chart_link = api_create(p, filename="despesa 2018 (versão compacta)")
-chart_link
+#chart_link = api_create(p, filename="despesa 2018 (versão compacta)")
+#chart_link
 p
 
 
@@ -480,8 +480,8 @@ p <- plot_ly(
 
 # Create a shareable link to your chart
 # Set up API credentials: https://plot.ly/r/outflux
-chart_link = api_create(p, filename="pensão aposentadoria")
-chart_link
+#chart_link = api_create(p, filename="pensão aposentadoria")
+#chart_link
 p
 
 
