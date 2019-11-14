@@ -19,16 +19,15 @@ Como o governo pode aumentar a desvincularção orçamentária?
 
 Antes de responder essa pergunta precisamos entender o conceito de fonte de recurso.
 
-Mas, já vou adiantar, o governo precisa de mais <div class="text-red mb-2">
-  recursos ordinários (fonte 100) </div> e menos fontes vinculadas (todas as outras fontes).
+Mas, já vou adiantar, o governo precisa de mais recursos ordinários (fonte 100) e menos fontes vinculadas (todas as outras fontes).
 
 A seguir destaco a fonte recursos ordinários em gráficos sobre a arrecadação e a despesa do governo federal. 
+
 
 ***   
 
 
 ### Arrecadação por fonte
-
 ### detalhado por espécie, fonte e esfera orçamentária
 
 Abaixo apresentamos a arrecadação do governo federal em 2018 detalhado por espécie, fonte e esfera orçamentária.
@@ -69,7 +68,6 @@ Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recurs
 *** 
 
 ### Despesa por fonte
-
 #### Detalhado por esfera, indicador de resultado primário, fonte e elemento da despesa
 
 
