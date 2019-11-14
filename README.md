@@ -46,8 +46,8 @@ Apliquei um filtro para criar a rubrica "demais". Agrupei sob a rubrica "demais"
 
 
 <div>
-    <a href="https://plot.ly/~andreferraribr/48/?share_key=rWQWENbpNSG2MvYRIIvUiN" target="_blank" title="despesa 2018 (versão compacta)" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/48.png?share_key=rWQWENbpNSG2MvYRIIvUiN" alt="despesa 2018 (versão compacta)" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:48" sharekey-plotly="rWQWENbpNSG2MvYRIIvUiN" src="https://plot.ly/embed.js" async></script>
+    <a href="https://plot.ly/~andreferraribr/48/" target="_blank" title="despesa 2018 (versão compacta)" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/48.png" alt="despesa 2018 (versão compacta)" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:48" src="https://plot.ly/embed.js" async></script>
 </div>
 
 
