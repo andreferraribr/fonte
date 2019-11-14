@@ -21,7 +21,7 @@ Devido à DRU, a seguridade social perde a garantia de ter R$ 120 bilhões gasto
 
 Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recursos.
 
-Para melhorar a visualização, agrupamos sob a rubrica "demais" tanto as espécies e quanto as fontes com valores individuais inferiores a R$ 20 bilhões.
+Para melhorar a visualização, agrupamos sob a rubrica "demais" tanto as espécies quanto as fontes com valores individuais inferiores a R$ 20 bilhões.
 
 
 <div>
@@ -44,8 +44,6 @@ Destacamos, em vermelho, os recursos ordinários.
 Apliquei um filtro para criar a rubrica "demais". Agrupei sob a rubrica "demais" tanto os elementos quanto as fontes com valores individuais inferiores a R$ 10 bilhões.
 
 
-
-Abaixo a versão compactada da despesa.
 
 <div>
     <a href="https://plot.ly/~andreferraribr/48/?share_key=rWQWENbpNSG2MvYRIIvUiN" target="_blank" title="despesa 2018 (versão compacta)" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/48.png?share_key=rWQWENbpNSG2MvYRIIvUiN" alt="despesa 2018 (versão compacta)" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
