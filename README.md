@@ -114,10 +114,14 @@ O controle por fonte permite visualizar quais fontes o governo utilizou para pag
 
 Destacamos, em vermelho, quatro pontos interessantes. Em termos nominais, no período de 2005 a 2018, o governo destinou para a seguridade social:
 
-1) R$ 539 bi de recursos ordinários
-2) R$ 197 bi de recursos provenientes da Remuneração das disponibilidades do Tesouro Nacional
-3) R$ 163 bi de recursos provenientes de Títulos de responsabilidade do Tesouro Nacional
-4) R$ 185 bi de recursos do orçamento fiscal para cobrir despesas com aposentadorias e pensões
+1) R$ 539 bi de recursos ordinários   
+
+2) R$ 197 bi de recursos provenientes da Remuneração das disponibilidades do Tesouro Nacional   
+
+3) R$ 163 bi de recursos provenientes de Títulos de responsabilidade do Tesouro Nacional   
+
+4) R$ 185 bi de recursos do orçamento fiscal para cobrir despesas com aposentadorias e pensões   
+
 ***   
 
 <div>
@@ -131,8 +135,10 @@ Destacamos, em vermelho, quatro pontos interessantes. Em termos nominais, no per
 
 Vimos anteriormente que parte da arrecadação das contribuições sociais percorre o seguinte fluxo:
 
-1) parte da arrecadação é desvinculada via DRU,
-2) A DRU irriga a fonte de recursos ordinários,
+1) parte da arrecadação é desvinculada via DRU,   
+
+2) A DRU irriga a fonte de recursos ordinários,   
+
 3) Os recursos ordinários são direcionados para o orçamento fiscal.
 
 Agora vamos apurar o saldo das transferências líquidas entre o orçamento da seguridade social e o orçamento fiscal.
