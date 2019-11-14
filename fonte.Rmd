@@ -10,15 +10,11 @@ output:
 ### Fonte de recursos:
 #### A chave para entender a desvinculação do orçamento federal
 
-No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas [https://www.youtube.com/watch?v=v9PENV_E7vM].
+No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas.
 
-Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação de recursos?
+Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação do orçamento?
 
-Vamos utilizar dados abertos para explicar:
-
-1) o fluxo orçamentário
-2) a desvinculação de recursos
-3) o conceito de fonte de recursos
+Desvincular o orçamento é conceder maior liberdade (e responsabilidade) para o gestor alocar os recursos.
 
 
 
@@ -90,140 +86,8 @@ outflux <- outflux%>%
 ***   
 
 
-### Arrecadação
-
-Vamos utilizar os dados do ano de 2018.
-
-Abaixo apresentamos a arrecadação por espécie, fonte e esfera orçamentária.
-
-Em vermelho temos a fonte de recursos ordinários, também conhecida como fonte 100.
-
-Inúmeras espécies irrigam os recursos ordinários: impostos, taxas, contribuições econômicas, contribuições sociais...
-
-Os recursos ordinários, por sua vez, irrigam o orçamento fiscal.
-
-
-```{r, arrecadação por fonte (R$ Bi)}
-
-# Governo Federal 2018: arrecadação por fonte (R$ Bi)
-
-influx_s<- nat_rec%>%
-  # filtra pelo ano de 2018 e valore maiores que R$ 0
-  filter(ano == 2018,influx_reais>0 )%>%
-# utilizar group_by para incluir as variáveis specie_name_cod, fonte_name_cod, esfera_in no gráfico sankey
-    group_by( especie_name_cod, fonte_name_cod, esfera_in)%>%
- # transformar em bilhões de reais
-   summarise(total = sum(influx_reais/1000000000))%>%
-  arrange(desc(total ))
-  # cria variávies para identificar espécies e fontes menores que determinado valor e reclassificá-las como "demais"
-influx_s<- influx_s%>%
-    mutate(fonte_demais = ifelse(total > 0, fonte_name_cod, "demais fontes") )%>%
-  mutate(especie_demais = ifelse(total > 0, especie_name_cod, "demais espécies") )%>%
-  group_by( especie_demais, fonte_demais, esfera_in)%>%
-  summarise(value = sum(total))
-
-# arredondar valor para melhorar visualização da tabela
-influx_s$value<-as.numeric(myround(influx_s$value, 1))
-names<- vector()
-nodes<- vector()
-
-# loop para extrair nomes dos nodes a partir da df influx_s
-for(i in 1:ncol(influx_s)-1)
-{
-for(j in 1:NROW(influx_s[,i]))
-{
-names <- c(names,influx_s[j,i]) ;
-}
-}
-
-# obeter apenas os nomes únicos.
-name<- unique(as.character(names))
-
-# criar nodes
-nodes<- data.frame(cbind(node = c((0:(length(name)-1))), name))
-
-nodes$node <- as.numeric(as.character(nodes$node))
-
-## criar links
-links <- influx_s%>%
-  group_by_at(1:2)%>%
-  summarise(value = sum(value))
-colnames(links)<-c("source","target","value")
-##
-links<-as.data.frame(links)
-
-## criar links adcionais caso a df influx_s tenha mais de duas variáveis
-for(i in 1:(ncol(influx_s)-3))
-{
-loop_link <- influx_s%>%
-  group_by_at((1+i):(2+i))%>%
-  summarise(teste = sum(value))
-loop_link<-as.data.frame(loop_link)
-colnames(loop_link)<-c("source","target","value")
-# juntar os links
-links<-rbind(links,loop_link)
-}
-
-# mesclar nodes aos valores
-links <- merge(links, nodes, by.x = "target", by.y = "name")
-links <- merge(links, nodes, by.x = "source", by.y = "name")
-
-## remover duplicados 
-links <- distinct(links, target,source, .keep_all= TRUE)
-
-# preparar os dados finais para o sankey
-links_final <- links[ , c("node.y", "node.x", "value")]
-colnames(links_final) <- c("source", "target", "value")
-
-
-p <- plot_ly(
-    type = "sankey",
-    width = 800, height = 800,
-    orientation = "h",
-    node = list(
-      label = nodes$name,
-      # quantidade de cores == lenght nodes
-      color = c(rep("lightgray",57),"red", rep("lightgray",73)),
-      pad = 15,
-      thickness = 20,
-      line = list(
-        color = "black",
-        width = 0.5
-      )
-    ),
-
-    link = list(
-      source = links_final$source,
-      target = links_final$target,
-      value =  links_final$value,
-      # quantidade de cores == lenght links
-      color = "lightgray"
-    )
-  ) %>% 
-  layout( title = "Governo Federal 2018: arrecadação por fonte (R$ Bi)",
-          font = list(size = 10
-                      )
-)
-
-
-# Create a shareable link to your chart
-#chart_link = api_create(p, filename="emaranhado")
-#chart_link
-# exibir gráfico e tabela
-
-p
-```
-
-***   
-
-
-### A Faixa da discórdia   
-
-#### DRU x Orçamento da Seguridade Social
-
-Criamos um filtro para melhorar a compreensão do fluxo da arrecadação.
-
-Filtramos espécies e fontes com valores superiores a R$ 20 bilhões.
+### Arrecadação por fonte
+##### DRU x Orçamento da Seguridade Social
 
 Em azul temos a faixa da discórdia: a desvinculação da arrecadação de contribuições sociais.
 
@@ -233,10 +97,12 @@ Devido à DRU, a seguridade social perde a garantia de ter R$ 120 bilhões gasto
 
 Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recursos.
 
+Para melhorar a visualização, agrupamos sob a rubrica "demais" tanto as espécies quanto as fontes com valores individuais inferiores a R$ 20 bilhões.
+
 
 Vídeo sobre a DRU [https://www.youtube.com/watch?v=nb9LkOjUZyg]
 
-```{r, Desvinculação de Recursos da União (R$ Bi)}
+```{r, Desvinculação de Recursos da União (R$ Bi), fig.width = 12,  fig.height= 9}
 
 # Governo Federal 2018: Desvinculação de Recursos da União (R$ Bi)
 
@@ -341,8 +207,8 @@ p <- plot_ly(
 
 
 # Create a shareable link to your chart
-#chart_link = api_create(p, filename="DRU")
-#chart_link
+chart_link = api_create(p, filename="DRU")
+chart_link
 # exibir gráfico e tabela
 
 p
@@ -372,131 +238,20 @@ estão sendo utilizados.
 ***   
 
 
-### Todos os pagamento de 2018   
-
-#### Detalhamento por esfera, indicador de resultado primário, fonte e elemento da despesa
+### Despesa por fonte
 
 
-Vamos ampliar o escopo da nossa análise. O gráfico abaixo traz todos os pagamentos efetuados em 2018. A informação é detalhada por esfera, indicador de resultado primário, fonte e elemento da despesa.
+O gráfico abaixo traz todos os pagamentos efetuados em 2018 (LOA + restos a pagar).
+
+A informação é detalhada por esfera, indicador de resultado primário, fonte e elemento da despesa.
 
 Destacamos, em vermelho, os recursos ordinários.   
 
-Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de elementos da despesa.
+Apliquei um filtro para criar a rubrica "demais". Agrupei sob a rubrica "demais" tanto os elementos quanto as fontes com valores individuais inferiores a R$ 10 bilhões.
 
 
-```{r, Governo Feredal 2018: pagamentos por esfera, indicador de resultado primário, fonte de recurso e elemento da despesa (R$ bi)}
-outflux_s<- outflux%>%
-  filter( outflux_reais>1, ano == "2018" )%>%
-  group_by(esfera_out, res_primario, fonte, elemento)%>%
-  summarise(value = sum(outflux_reais/1000000000))%>%
-  arrange(desc(value ))
 
-# arredondar valor para melhorar visualização da tabela
-
-outflux_s$value<-round(outflux_s$value, 1)
-
-names<- c()
-
-# loop para extrair nomes dos nodes a partir da df outflux_s
-for(i in 1:ncol(outflux_s)-1)
-{
-for(j in 1:NROW(outflux_s[,i]))
-{
-names <- c(names,outflux_s[j,i]) ;
-}
-}
-
-
-# obeter apenas os nomes únicos.
-name<- unique(as.character(names))
-
-## reverter a ordem de nodes 
-
-# criar nodes
-nodes<- data.frame(cbind(node = c((0:(length(name)-1))), name))
-
-nodes$node <- as.numeric(as.character(nodes$node))
-
-## criar links
-
-links <- outflux_s%>%
-  group_by_at(1:2)%>%
-  summarise(value = sum(value))
-colnames(links)<-c("source","target","value")
-##
-links<-as.data.frame(links)
-
-## criar links adcionais caso a df outflux_s tenha mais de duas variáveis
-loop_link<-c("")
-
-for(i in 1:(ncol(outflux_s)-3))
-{
-loop_link <- outflux_s%>%
-  group_by_at((1+i):(2+i))%>%
-  summarise(teste = sum(value))
-loop_link<-as.data.frame(loop_link)
-colnames(loop_link)<-c("source","target","value")
-
-# juntar os links
-links<-rbind(links,loop_link)
-}
-
-# mesclar nodes aos valores
-links <- merge(links, nodes, by.x = "target", by.y = "name")
-links <- merge(links, nodes, by.x = "source", by.y = "name")
-
-
-links_final <- links[ , c("node.y", "node.x", "value")]
-colnames(links_final) <- c("source", "target", "value")
-
-p <- plot_ly(
-    type = "sankey",
-    orientation = "h",
-    width = 800, height = 800,
-    node = list(
-      label = nodes$name,
-      color = c(rep("lightgray",13),"red",rep("lightgray",130)),
-      pad = 15,
-      thickness = 20,
-      line = list(
-        color = "black",
-        width = 0.5
-      )
-    ),
-
-    link = list(
-      source = links_final$source,
-      target = links_final$target,
-      value =  links_final$value
-    )
-  ) %>% 
-  layout(
-    title = "Governo Feredal 2018: pagamentos por esfera, indicador de resultado primário, fonte de recurso e elemento da despesa (R$ bi)",
-    font = list(
-      size = 7
-    )
-)
-
-# Create a shareable link to your chart
-# Set up API credentials: https://plot.ly/r/outflux
-#chart_link = api_create(p, filename="despesa 2018")
-#chart_link
-p
-
-
-```
-
-***   
-
-#### Todos os pagamentos de 2018: Versão compacta (filtrar valores maiores que R$ 10 bi)
-
-Apliquei um filtro para criar a rubica "demais".
-
-Classifiquei como "demais" as fontes com valor individual inferior a R$ 10 bi. Adoteio o mesmo procedimento para os elementos da despesa.
-
-Abaixo a versão compactada dos pagamentos de 2018.
-
-```{r, compacto Governo Federal 2018: pagamentos por esfera, resultado primário, fonte e elemento  (R$ bi),fig.width = 15,  fig.height= 9}
+```{r, compacto Governo Federal 2018,fig.width = 15,  fig.height= 9}
 outflux_s<- outflux%>%
   # filtra pelo ano de 2018 e valore maiores que R$ 0
   filter(ano == 2018,outflux_reais>0 )%>%
@@ -587,11 +342,11 @@ p <- plot_ly(
     link = list(
       source = links_final$source,
       target = links_final$target,
-      value =  links_final$value
-    )
+      value =  links_final$value,
+      color = c(rep("lightgray",12),"red",rep("lightgray",14),"red",rep("lightgray",4),"red",rep("lightgray",35),rep("red",7),"red",rep("lightgray",11)))
   ) %>% 
   layout(
-    title = "Governo Feredal 2018: pagamentos por esfera, indicador de resultado primário, fonte de recurso e elemento da despesa (R$ bi)",
+    title = "Governo Feredal 2018: pagamentos por fonte de recurso (R$ bi)",
     font = list(
       size = 8
     )
@@ -599,7 +354,7 @@ p <- plot_ly(
 
 # Create a shareable link to your chart
 # Set up API credentials: https://plot.ly/r/outflux
-chart_link = api_create(p, filename="despesa 2018")
+chart_link = api_create(p, filename="despesa 2018 (versão compacta)")
 chart_link
 p
 
@@ -712,20 +467,21 @@ p <- plot_ly(
     link = list(
       source = links_final$source,
       target = links_final$target,
-      value =  links_final$value
-    )
+      value =  links_final$value,
+      # quantidade de cores == lenght links
+      color = c(rep("lightgray",26),"red","red","red", rep("lightgray",23),"red","lightgray","lightgray","red",rep("lightgray",5),"red","lightgray","lightgray","lightgray"))
   ) %>% 
   layout(
-    title = "Governo Federal 2005 a 2018: fontes de recurso utilizadas para pagamentos de pensão e aposentadoria (R$ Bi nominais)",
+    title = "Governo Federal 2005 a 2018: pagamentos de pensão e aposentadoria (R$ Bi nominais)",
     font = list(
-      size = 7
+      size = 9
     )
 )
 
 # Create a shareable link to your chart
 # Set up API credentials: https://plot.ly/r/outflux
-#chart_link = api_create(p, filename="pensão aposentadoria")
-#chart_link
+chart_link = api_create(p, filename="pensão aposentadoria")
+chart_link
 p
 
 
@@ -738,8 +494,10 @@ p
 
 Vimos anteriormente que parte da arrecadação das contribuições sociais percorre o seguinte fluxo:
 
-1) parte da arrecadação é desvinculada via DRU,
-2) A DRU irriga a fonte de recursos ordinários,
+1) parte da arrecadação é desvinculada via DRU,   
+
+2) A DRU irriga a fonte de recursos ordinários,   
+
 3) Os recursos ordinários são direcionados para o orçamento fiscal.
 
 Agora vamos apurar o saldo das transferências líquidas entre o orçamento da seguridade social e o orçamento fiscal.
