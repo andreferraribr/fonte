@@ -1,53 +1,17 @@
 
-<html>
-  <head>
-    <title>Plano Mais Brasil</title>
-  </head>
-</html>
-
-
 ### Fonte de recursos:
 #### A chave para entender a desvinculação do orçamento federal
 
-No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas 
+No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas.
 
-Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação de recursos?
+Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação do orçamento?
 
-Vamos utilizar dados abertos para explicar:
-
-1) o fluxo orçamentário
-2) a desvinculação de recursos
-3) o conceito de fonte de recursos
+Desvincular o orçamento é conceder maior liberdade (e responsabilidade) para o gestor alocar os recursos.
 
 ***   
 
-
-### Arrecadação
-
-Vamos utilizar os dados do ano de 2018.
-
-Abaixo apresentamos a arrecadação por espécie, fonte e esfera orçamentária.
-
-Em vermelho temos a fonte de recursos ordinários, também conhecida como fonte 100.
-
-Inúmeras espécies irrigam os recursos ordinários: impostos, taxas, contribuições econômicas, contribuições sociais...
-
-Os recursos ordinários, por sua vez, irrigam o orçamento fiscal.
-
-gráfico
-
-<div>
-    <a href="https://plot.ly/~andreferraribr/21/?share_key=jzAZjdvxDR2q8E8ICne3pO" target="_blank" title="emaranhado" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/21.png?share_key=jzAZjdvxDR2q8E8ICne3pO" alt="emaranhado" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:21" sharekey-plotly="jzAZjdvxDR2q8E8ICne3pO" src="https://plot.ly/embed.js" async></script>
-</div>
-
-
-
-#### DRU x Orçamento da Seguridade Social
-
-Criamos um filtro para melhorar a compreensão do fluxo da arrecadação.
-
-Filtramos espécies e fontes com valores superiores a R$ 20 bilhões.
+### Arrecadação por fonte
+##### DRU x Orçamento da Seguridade Social
 
 Em azul temos a faixa da discórdia: a desvinculação da arrecadação de contribuições sociais.
 
@@ -57,32 +21,38 @@ Devido à DRU, a seguridade social perde a garantia de ter R$ 120 bilhões gasto
 
 Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recursos.
 
+Para melhorar a visualização, agrupamos sob a rubrica "demais" tanto as espécies quanto as fontes com valores individuais inferiores a R$ 20 bilhões.
+
+
 <div>
     <a href="https://plot.ly/~andreferraribr/23/?share_key=iapCWfSlqbJWq6tNV3CXFu" target="_blank" title="DRU" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/23.png?share_key=iapCWfSlqbJWq6tNV3CXFu" alt="DRU" style="max-width: 100%;width: 700px;"  width="700" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="andreferraribr:23" sharekey-plotly="iapCWfSlqbJWq6tNV3CXFu" src="https://plot.ly/embed.js" async></script>
 </div>
 
 
+*** 
 
-### Todos os pagamento de 2018   
-
-#### Detalhamento por esfera, indicador de resultado primário, fonte e elemento da despesa
+### Despesa por fonte
 
 
-Vamos ampliar o escopo da nossa análise. O gráfico abaixo traz todos os pagamentos efetuados em 2018. A informação é detalhada por esfera, indicador de resultado primário, fonte e elemento da despesa.
+O gráfico abaixo traz todos os pagamentos efetuados em 2018 (LOA + restos a pagar).
+
+A informação é detalhada por esfera, indicador de resultado primário, fonte e elemento da despesa.
 
 Destacamos, em vermelho, os recursos ordinários.   
 
-Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de elementos da despesa.
+Apliquei um filtro para criar a rubrica "demais". Agrupei sob a rubrica "demais" tanto os elementos quanto as fontes com valores individuais inferiores a R$ 10 bilhões.
+
+
 
 <div>
-    <a href="https://plot.ly/~andreferraribr/27/?share_key=LVeb10LBU6TY7nhiV2IFqs" target="_blank" title="despesa 2018" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/27.png?share_key=LVeb10LBU6TY7nhiV2IFqs" alt="despesa 2018" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="andreferraribr:27" sharekey-plotly="LVeb10LBU6TY7nhiV2IFqs" src="https://plot.ly/embed.js" async></script>
+    <a href="https://plot.ly/~andreferraribr/48/?share_key=rWQWENbpNSG2MvYRIIvUiN" target="_blank" title="despesa 2018 (versão compacta)" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/48.png?share_key=rWQWENbpNSG2MvYRIIvUiN" alt="despesa 2018 (versão compacta)" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="andreferraribr:48" sharekey-plotly="rWQWENbpNSG2MvYRIIvUiN" src="https://plot.ly/embed.js" async></script>
 </div>
 
 
-***   
 
+***
 
 ### Fonte e pagamentos de pensão e aposentadoria
 
@@ -90,10 +60,14 @@ O controle por fonte permite visualizar quais fontes o governo utilizou para pag
 
 Destacamos, em vermelho, quatro pontos interessantes. Em termos nominais, no período de 2005 a 2018, o governo destinou para a seguridade social:
 
-1) R$ 539 bi de recursos ordinários
-2) R$ 197 bi de recursos provenientes da Remuneração das disponibilidades do Tesouro Nacional
-3) R$ 163 bi de recursos provenientes de Títulos de responsabilidade do Tesouro Nacional
-4) R$ 185 bi de recursos do orçamento fiscal para cobrir despesas com aposentadorias e pensões
+1) R$ 539 bi de recursos ordinários   
+
+2) R$ 197 bi de recursos provenientes da Remuneração das disponibilidades do Tesouro Nacional   
+
+3) R$ 163 bi de recursos provenientes de Títulos de responsabilidade do Tesouro Nacional   
+
+4) R$ 185 bi de recursos do orçamento fiscal para cobrir despesas com aposentadorias e pensões   
+
 ***   
 
 <div>
@@ -101,12 +75,16 @@ Destacamos, em vermelho, quatro pontos interessantes. Em termos nominais, no per
     <script data-plotly="andreferraribr:29" sharekey-plotly="ewNtEiZEVQUYzDRtXPTlHF" src="https://plot.ly/embed.js" async></script>
 </div>
 
+*** 
+
 ### DRU x Fonte Recursos Ordinários
 
 Vimos anteriormente que parte da arrecadação das contribuições sociais percorre o seguinte fluxo:
 
-1) parte da arrecadação é desvinculada via DRU,
-2) A DRU irriga a fonte de recursos ordinários,
+1) parte da arrecadação é desvinculada via DRU,   
+
+2) A DRU irriga a fonte de recursos ordinários,   
+
 3) Os recursos ordinários são direcionados para o orçamento fiscal.
 
 Agora vamos apurar o saldo das transferências líquidas entre o orçamento da seguridade social e o orçamento fiscal.
