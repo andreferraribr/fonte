@@ -9,32 +9,34 @@
 ### Fonte de recursos:
 #### A chave para entender a desvinculação do orçamento federal
 
-No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas 
+No dia 05/11/2019 o governo federal anunciou medidas econômicas para equilibrar as contas públicas.
 
-Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação de recursos?
+Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a desvinculação do orçamento?
 
-Vamos utilizar dados abertos para explicar:
+Desvincular o orçamento é conceder maior liberdade (e responsabilidade) para o gestor alocar os recursos.
 
-1) o fluxo orçamentário
-2) a desvinculação de recursos
-3) o conceito de fonte de recursos
+Como o governo pode aumentar a desvincularção orçamentária?
+
+Antes de responder essa pergunta precisamos entender o conceito de fonte de recurso.
+
+Mas, já vou adiantar, o governo precisa de mais recursos ordinários (fonte 100) e menos fontes vinculadas (todas as outras fontes).
+
+A seguir destaco a fonte recursos ordinários em gráficos sobre a arrecadação e a despesa do governo federal. 
 
 ***   
 
 
-### Arrecadação
+### Arrecadação por fonte
 
-Vamos utilizar os dados do ano de 2018.
+### detalhado por espécie, fonte e esfera orçamentária
 
-Abaixo apresentamos a arrecadação por espécie, fonte e esfera orçamentária.
+Abaixo apresentamos a arrecadação do governo federal em 2018 detalhado por espécie, fonte e esfera orçamentária.
 
 Em vermelho temos a fonte de recursos ordinários, também conhecida como fonte 100.
 
 Inúmeras espécies irrigam os recursos ordinários: impostos, taxas, contribuições econômicas, contribuições sociais...
 
 Os recursos ordinários, por sua vez, irrigam o orçamento fiscal.
-
-gráfico
 
 <div>
     <a href="https://plot.ly/~andreferraribr/21/?share_key=jzAZjdvxDR2q8E8ICne3pO" target="_blank" title="emaranhado" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/21.png?share_key=jzAZjdvxDR2q8E8ICne3pO" alt="emaranhado" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
@@ -43,24 +45,10 @@ gráfico
 
 
 
-<p>
-  <a href="https://plot.ly/~andreferraribr/48/">item 1</a>
-  <a href="#item2">item 2</a>
-  <a href="#item3">item 3</a>
-  <a href="#default">clear</a>
+#### Versão compacta da Arrecadação
+##### DRU x Orçamento da Seguridade Social
 
-<div class="items">
-  <p id="item1">... item 1...
-  <p id="item2">... item 2...
-  <p id="item3">...
-  <p id="default"><!-- by default, show no text -->
-</div>
-
-#### DRU x Orçamento da Seguridade Social
-
-Criamos um filtro para melhorar a compreensão do fluxo da arrecadação.
-
-Filtramos espécies e fontes com valores superiores a R$ 20 bilhões.
+Apresentamos agora uma versão compacta do gráfico da arrecadação. Agrupamos sob a rubrica "demais" tanto as espécies e quanto as fontes com valor individuais inferiores a R$ 20 bilhões.
 
 Em azul temos a faixa da discórdia: a desvinculação da arrecadação de contribuições sociais.
 
@@ -77,12 +65,14 @@ Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recurs
 
 
 
-### Todos os pagamento de 2018   
+### Despesa por fonte
 
-#### Detalhamento por esfera, indicador de resultado primário, fonte e elemento da despesa
+#### Detalhado por esfera, indicador de resultado primário, fonte e elemento da despesa
 
 
-Vamos ampliar o escopo da nossa análise. O gráfico abaixo traz todos os pagamentos efetuados em 2018. A informação é detalhada por esfera, indicador de resultado primário, fonte e elemento da despesa.
+O gráfico abaixo traz todos os pagamentos efetuados em 2018 (LOA + restos a pagar).
+
+A informação é detalhada por esfera, indicador de resultado primário, fonte e elemento da despesa.
 
 Destacamos, em vermelho, os recursos ordinários.   
 
@@ -97,13 +87,15 @@ Os recursos ordinários foram utilizados para pagar 51 tipos diferentes de eleme
 
 
 ***   
-#### Todos os pagamentos de 2018: Versão compacta (filtrar valores maiores que R$ 10 bi)
+#### Versão compacta da despesa
 
 Apliquei um filtro para criar a rubrica "demais".
 
-Classifiquei como "demais" as fontes com valor individual inferior a R$ 10 bi. Adoteio o mesmo procedimento para os elementos da despesa.
+Classifiquei como "demais" as fontes com valor individual inferior a R$ 10 bi.
 
-Abaixo a versão compactada dos pagamentos de 2018.
+Adoteio o mesmo procedimento para os elementos da despesa.
+
+Abaixo a versão compactada da despesa.
 
 <div>
     <a href="https://plot.ly/~andreferraribr/48/?share_key=rWQWENbpNSG2MvYRIIvUiN" target="_blank" title="despesa 2018 (versão compacta)" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/48.png?share_key=rWQWENbpNSG2MvYRIIvUiN" alt="despesa 2018 (versão compacta)" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
