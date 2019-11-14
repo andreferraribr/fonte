@@ -8,22 +8,10 @@ Uma das medidas pretende desvincular recursos orçamentários. Mas o que é a de
 
 Desvincular o orçamento é conceder maior liberdade (e responsabilidade) para o gestor alocar os recursos.
 
-Como o governo pode aumentar a desvincularção orçamentária?
-
-Antes de responder essa pergunta precisamos entender o conceito de fonte de recurso.
-
-Mas, já vou adiantar, o governo precisa de mais recursos ordinários (fonte 100) e menos fontes vinculadas (todas as outras fontes).
-
-A seguir destaco a fonte recursos ordinários em gráficos sobre a arrecadação e a despesa do governo federal. 
-
-
 ***   
-
 
 ### Arrecadação por fonte
 ##### DRU x Orçamento da Seguridade Social
-
-Para melhorar a visualização, agrupamos sob a rubrica "demais" tanto as espécies e quanto as fontes com valor individuais inferiores a R$ 20 bilhões.
 
 Em azul temos a faixa da discórdia: a desvinculação da arrecadação de contribuições sociais.
 
@@ -32,6 +20,9 @@ Parte da arrecadação das contribuições sociais é desvinculada via Desvincul
 Devido à DRU, a seguridade social perde a garantia de ter R$ 120 bilhões gastos exclusivamente em despesas da seguridade social. O governo redireciona os R$ 120 bi para a fonte recursos ordinários e agora o governo pode utilizar esses recursos para pagar qualquer tipo de despesa, inclusive despesas da seguridade social.
 
 Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recursos.
+
+Para melhorar a visualização, agrupamos sob a rubrica "demais" tanto as espécies e quanto as fontes com valores individuais inferiores a R$ 20 bilhões.
+
 
 <div>
     <a href="https://plot.ly/~andreferraribr/23/?share_key=iapCWfSlqbJWq6tNV3CXFu" target="_blank" title="DRU" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/23.png?share_key=iapCWfSlqbJWq6tNV3CXFu" alt="DRU" style="max-width: 100%;width: 700px;"  width="700" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
@@ -42,7 +33,7 @@ Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recurs
 *** 
 
 ### Despesa por fonte
-#### Versão compacta da despesa
+
 
 O gráfico abaixo traz todos os pagamentos efetuados em 2018 (LOA + restos a pagar).
 
@@ -50,7 +41,7 @@ A informação é detalhada por esfera, indicador de resultado primário, fonte 
 
 Destacamos, em vermelho, os recursos ordinários.   
 
-Apliquei um filtro para criar a rubrica "demais". Agrupei sob a rubrica "demais" tanto os elementos quanto as fontes com valor individuais inferiores a R$ 10 bilhões.
+Apliquei um filtro para criar a rubrica "demais". Agrupei sob a rubrica "demais" tanto os elementos quanto as fontes com valores individuais inferiores a R$ 10 bilhões.
 
 
 
