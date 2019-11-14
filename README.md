@@ -44,6 +44,7 @@ Os recursos ordinários, por sua vez, irrigam o orçamento fiscal.
 </div>
 
 
+*** 
 
 #### Versão compacta da Arrecadação
 ##### DRU x Orçamento da Seguridade Social
@@ -64,6 +65,7 @@ Ao desvincular o orçamento, o governo ganha flexibilidade para alocar os recurs
 </div>
 
 
+*** 
 
 ### Despesa por fonte
 
@@ -105,6 +107,7 @@ Abaixo a versão compactada da despesa.
 
 
 ***
+
 ### Fonte e pagamentos de pensão e aposentadoria
 
 O controle por fonte permite visualizar quais fontes o governo utilizou para pagar despesas com pensões e aposentadorias.
@@ -121,6 +124,8 @@ Destacamos, em vermelho, quatro pontos interessantes. Em termos nominais, no per
     <a href="https://plot.ly/~andreferraribr/29/?share_key=ewNtEiZEVQUYzDRtXPTlHF" target="_blank" title="pensão aposentadoria" style="display: block; text-align: center;"><img src="https://plot.ly/~andreferraribr/29.png?share_key=ewNtEiZEVQUYzDRtXPTlHF" alt="pensão aposentadoria" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="andreferraribr:29" sharekey-plotly="ewNtEiZEVQUYzDRtXPTlHF" src="https://plot.ly/embed.js" async></script>
 </div>
+
+*** 
 
 ### DRU x Fonte Recursos Ordinários
 
