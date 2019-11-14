@@ -1,11 +1,4 @@
 
-<html>
-  <head>
-    <title>Plano Mais Brasil</title>
-  </head>
-</html>
-
-
 ### Fonte de recursos:
 #### A chave para entender a desvinculação do orçamento federal
 
