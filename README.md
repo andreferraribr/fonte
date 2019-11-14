@@ -43,6 +43,19 @@ gráfico
 
 
 
+<p>
+  <a href="https://plot.ly/~andreferraribr/48/">item 1</a>
+  <a href="#item2">item 2</a>
+  <a href="#item3">item 3</a>
+  <a href="#default">clear</a>
+
+<div class="items">
+  <p id="item1">... item 1...
+  <p id="item2">... item 2...
+  <p id="item3">...
+  <p id="default"><!-- by default, show no text -->
+</div>
+
 #### DRU x Orçamento da Seguridade Social
 
 Criamos um filtro para melhorar a compreensão do fluxo da arrecadação.
